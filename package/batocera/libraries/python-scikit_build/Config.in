@@ -1,0 +1,4 @@
+config BR2_PACKAGE_PYTHON_SCIKIT_BUILD
+	bool "python-scikit_build"
+	help
+	  scikit-build is a Python build system for CPython C/C++/Fortran/Cython extensions using CMake.

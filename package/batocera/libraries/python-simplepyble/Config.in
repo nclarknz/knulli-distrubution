@@ -1,0 +1,8 @@
+config BR2_PACKAGE_PYTHON3_SIMPLEPYBLE
+	bool "python3-simplepyble"
+	select BR2_PACKAGE_PYTHON_PYBIND
+	select BR2_PACKAGE_PYTHON_SCIKIT_BUILD
+	help
+	  Simplepyble is a simple BT interface that works
+
+	  https://github.com/OpenBluetoothToolbox/SimpleBLE
