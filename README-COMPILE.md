@@ -3,14 +3,15 @@
 <p>Follow the instructions for compiling the batocera system on their main page.</p>
 
 <p>To compile for the RG35XX H series need to do</p>
-  <ul><li>sudo make h700-build  :- This builds it</li><
+  <ul><li>sudo make h700-build  :- This builds it</li>
   <li>sudo make h700-clean :- This cleans the previous build</li>
   <li>sudo make h700-shell :- This creates a shell you can check out command sin to solve any issues</li>
   <li>sudo make h700-pkg PKG=sdl2 :- This will compile individual packages</li>
   </ul>
   
+<p>To speed up compile time and stop any issues, I had to comment out any references to compiling mame. Edit the Config.in in teh root directory and comment out (put a #) any line that references mame. This repo will have to files for Configin. One tyhat has this already done and the other that doesn't.</p>
 
- <p>I had issues with compile, so I also run the command "sudo make -k h700-build 2>&1 | tee -a build.log". This writes the output to an external file so I can monitor what is going on, espically remotley as can just check the last modify time ofteh file to see if it has finished</p>
+ <p>I had issues with compile, so I also run the command "sudo make -k h700-build 2>&1 | tee -a build.log". This writes the output to an external file so I can monitor what is going on, espically remotley as can just check the last modify time of the file to see if it has finished</p>
 
 <p>Before this need to patch some files, which have been done in this github.</p>
     <ul>
