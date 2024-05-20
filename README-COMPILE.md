@@ -6,10 +6,10 @@
   <ul><li>sudo make h700-build  :- This builds it</li>
   <li>sudo make h700-clean :- This cleans the previous build</li>
   <li>sudo make h700-shell :- This creates a shell you can check out command sin to solve any issues</li>
-  <li>sudo make h700-pkg PKG=sdl2 :- This will compile individual packages</li>
+  <li>sudo make h700-pkg PKG=packagename :- This will compile individual packages</li>
   </ul>
   
-<p>To speed up compile time and stop any issues, I had to comment out any references to compiling mame. Edit the Config.in in teh root directory and comment out (put a #) any line that references mame. This repo will have to files for Configin. One tyhat has this already done and the other that doesn't.</p>
+<p>To speed up compile time and stop any issues, I had to comment out any references to compiling mame. Edit the Config.in in teh root directory and comment out (put a #) any line that references mame. This repo will have two files for Configin. One that has this already done and the other that doesn't.</p>
 
  <p>I had issues with compile, so I also run the command "sudo make -k h700-build 2>&1 | tee -a build.log". This writes the output to an external file so I can monitor what is going on, espically remotley as can just check the last modify time of the file to see if it has finished</p>
 
@@ -17,6 +17,7 @@
     <ul>
     <li>package\batocera\emulators\retroarch\libretro\libretro-parallel-n64\libretro-parallel-n64.mk</li>
     <li>SDL2 will fail to compile due to a missing ; on line 37 in the file SDL_maliblitter.h in output\h700\build\sdl2-2.28.5\src\video\mali-fbdev<ul><li>This can be fixed by modifying the patch file in board\batocera\allwinner\h700\rg35xx-plus\patches\sdl2 called 0004-Rework-blitter-thread-sync.patch </li></ul></li>
+    <li>The version of xa needs bumping upto 2.4.1 from 2.4.0. Nopt changed in this repo yet as I cant remember where the config.in is for that lib</li>
     </ul>
 
 <p>If need to add new python packages then modify the batocera-board.common file /configs and set the build name of the package to y</p>
