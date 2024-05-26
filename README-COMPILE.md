@@ -23,9 +23,10 @@
 <p>If need to add new python packages then modify the batocera-board.common file /configs and set the build name of the package to y</p>
        <p>e.g. To add the python pip package add the line BR2_PACKAGE_PYTHON_PIP=y to the # python choices list in the file above.</p>
 
-<p>Need to add sections about adding certaiun python modules ot teh host compile as well as the target. e.g. I had issues compiling the simplepyble python module as cython and pybind was only added to the final build and I didt add to the host build (So I added them manually by runnign teh shell command above and calling the correct python binary in the /h700 sub directories and running the pip command (after I had locally installed that) </p>
+<p>Need to add sections about adding certaiun python modules to the host compile as well as the target. e.g. I had issues compiling the simplepyble python module as cython and pybind was only added to the final build and I didt add to the host build (So I added them manually by runnign teh shell command above and calling the correct python binary in the /h700 sub directories and running the pip command (after I had locally installed that) </p>
 
 <p>Will also need to add a new folder to package/batocera/{relevant sub dir} for the new package with a config.in and packagename.mk file. See other folders for examples of the chnages to make (e.g. see python-simplepyble in the package\batocera\libraries\python-simplepyble folder.)</p>
+<p>Then need to add a line to the Config.in in teh root directory to call the Config.in file you created above</p>
 
 <p>I assume you can add any system specific ones to the .board file for the actual platform trying to build for.</p>
 
