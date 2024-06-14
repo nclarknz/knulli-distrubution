@@ -1,0 +1,7 @@
+config BR2_PACKAGE_PYTHON3_CYTHON
+	bool "python3-cython"
+	help
+	  The Cython compiler for writing C extensions for the Python
+	  language.
+
+	  http://cython.org/

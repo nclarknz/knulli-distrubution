@@ -1,0 +1,6 @@
+config BR2_PACKAGE_PYTHON_ADAFRUIT_BLUEFRUITLE
+	bool "python-adafruit-bluefruitle"
+	help
+	  The adafruitbluefruitle module allows Python code to access the host machine's Bluetooth resources. It supports scanning for devices and opening bluetooth sockets (via native sockets on win/linux)
+
+	  https://github.com/ndsitnz/adafruitbluefruitle

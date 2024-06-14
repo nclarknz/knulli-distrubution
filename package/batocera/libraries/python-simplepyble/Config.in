@@ -1,5 +1,5 @@
-config BR2_PACKAGE_PYTHON3_SIMPLEPYBLE
-	bool "python3-simplepyble"
+config BR2_PACKAGE_PYTHON_SIMPLEPYBLE
+	bool "python-simplepyble"
 	select BR2_PACKAGE_PYTHON_PYBIND
 	select BR2_PACKAGE_PYTHON_SCIKIT_BUILD
 	help

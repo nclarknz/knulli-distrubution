@@ -1,0 +1,6 @@
+config BR2_PACKAGE_PYTHON_PYBLUEZ2
+	bool "python-pybluez2"
+	help
+	  The PyBluez module allows Python code to access the host machine's Bluetooth resources. It supports scanning for devices and opening bluetooth sockets (via native sockets on win/linux)
+
+	  https://github.com/airgproducts/pybluez2
