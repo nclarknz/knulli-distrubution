@@ -13,7 +13,7 @@
 
  <p>I had issues with compile, so I also run the command "sudo make -k h700-build 2>&1 | tee -a build.log". This writes the output to an external file so I can monitor what is going on, espically remotley as can just check the last modify time of the file to see if it has finished</p>
 
-<p>Before this need to patch some files, which have been done in this github.</p>
+<p>Before this need to patch some files, which have been done in this github repositry and the upstream one.</p>
     <ul>
     <li>package\batocera\emulators\retroarch\libretro\libretro-parallel-n64\libretro-parallel-n64.mk</li>
     <li>SDL2 will fail to compile due to a missing ; on line 37 in the file SDL_maliblitter.h in output\h700\build\sdl2-2.28.5\src\video\mali-fbdev<ul><li>This can be fixed by modifying the patch file in board\batocera\allwinner\h700\rg35xx-plus\patches\sdl2 called 0004-Rework-blitter-thread-sync.patch </li></ul></li>
