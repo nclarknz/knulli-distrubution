@@ -570,10 +570,11 @@ def createLibretroConfig(generator, system, controllers, metadata, guns, wheels,
         folder_name = path.parent.name   
             
         handhelds = {
-            ('19000000010000000100000000010000', 'Deeplay-keys', 'rg35xx-plus'): {  # rg35xx/h(only for H model since it has joysticks)
+            ('19000000010000000100000000010000', 'Deeplay-keys', 'rg35xx-plus'): {  # rg35xx/h(rotates dpad for plus also)
                 'rotation': 'left', 
                 'remap': {
                     'stk_r_x+': '18', 'stk_r_x-': '19', 'stk_r_y+': '17', 'stk_r_y-': '16',
+                    'btn_down': '6', 'btn_left': '4', 'btn_right': '5', 'btn_up': '7',
                     'btn_a': '0', 'btn_b': '1', 'btn_x': '8', 'btn_y': '-1',
                 }
             },
@@ -710,11 +711,15 @@ def createLibretroConfig(generator, system, controllers, metadata, guns, wheels,
 
     # Run-ahead option (latency reduction)
     retroarchConfig['run_ahead_enabled'] = 'false'
+    retroarchConfig['preemptive_frames_enable'] = 'false'
     retroarchConfig['run_ahead_frames'] = '0'
     retroarchConfig['run_ahead_secondary_instance'] = 'false'
     if system.isOptSet('runahead') and int(system.config['runahead']) >0:
        if (not system.name in systemNoRunahead):
-          retroarchConfig['run_ahead_enabled'] = 'true'
+          if system.isOptSet('preemptiveframes') and system.getOptBoolean('preemptiveframes') == True:
+            retroarchConfig['preemptive_frames_enable'] = 'true'
+          else:
+            retroarchConfig['run_ahead_enabled'] = 'true'
           retroarchConfig['run_ahead_frames'] = system.config['runahead']
           if system.isOptSet('secondinstance') and system.getOptBoolean('secondinstance') == True:
               retroarchConfig['run_ahead_secondary_instance'] = 'true'
